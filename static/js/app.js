@@ -4,6 +4,7 @@
 
 //Use otu_labels as the hovertext for the chart.
 
+
 function bar(values, ids, labels) {
     const data = [{
         x: values,
@@ -57,8 +58,9 @@ function bubble(values, ids, labels) {
     Plotly.newPlot("bubble", data, layout);
 }
 
+
 function plot(id) {
-    d3.json('/samples.json')
+    d3.json('https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json')
         .then((data) => {
             console.log(data);
 
@@ -80,8 +82,8 @@ function plot(id) {
 
             Object.entries(metadata).forEach(([key, value]) => {
                 metadataDiv.append("p").text(`${key}: ${value}`);
-            });
 
+            });
 
             // Plot Bar
             bar(sampleValues, otu_ids, otu_labels)
@@ -92,4 +94,4 @@ function plot(id) {
         })
 }
 
-plot('941')
+plot('940')
